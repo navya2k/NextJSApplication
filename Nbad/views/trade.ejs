@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs')%>
+
+<div class = "content">
+    <!-- <h3><%=item.id%></h3> -->
+    <h3><%= item.name%></h3>
+    <img src="<%=item.Image%>" alt="Image" width=250 height=150/>
+    <h4>Category: <%= item.category %> ,Status: <%= item.status%></h4>
+   
+    <div id="Details"><%=item.details%></div><br>
+    <% if(user ==item.author._id){%>
+    <form>
+        <button type="submit" formmethod="GET" formaction="/trades/<%=item.id%>/update">Update</button>
+        <button type="submit" formmethod="POST" formaction="/trades/<%=item.id%>?_method=DELETE">Delete</button>
+        
+
+    </form>
+    <%}%>
+    <%if(!(user ==item.author._id)&&item.status=="Available"){%>
+        <form>
+        <button type="submit" formmethod="GET" formaction="/users/trade/<%=item.id%>" >Trade</button>
+        <% if(watchlisted) { %>
+            <button type="submit" formmethod="POST" formaction="/users/trade/offer/<%=item.id %>">Unwatch</button>
+            <% } else { %>
+            <button type="submit" formmethod="POST" formaction="/trades/<%=item.id %>/watch">Watch</button>
+            <% } %>
+    </form>
+
+    <%}%>
+    
+     
+</div>
+
+
+        <!-- <section class="article">
+            <div id="main-content-area">
+                <img src="https://www.bigbangforex.com/wp-content/uploads/2020/05/what-is-position-trading.jpg" alt="Position Trading" id="logo">
+                <h2>Position Trading</h2>
+                <ul>
+                    
+                <li>Position trading is a popular long-term trading strategy​ that allows individual traders to hold a position for a long period of time, which is usually months or years. Position traders ignore short-term price movements and prefer to rely on more precise fundamental analysis​​ and long-term trends. This is the type of trading that most closely resembles buy and hold investing, with one crucial difference: buy and hold investors can only take long positions, whereas position traders can take both long and short.</li>
+                <li>The currency pair is a price that will be quoted to you on a trading platform at the rate of two separate currencies. Currency pairs have two sides and are displayed as EUR/GBP or the other way around. The currency on the left is the base one that you will buy and sell at. The right-hand side is the quote currency and sets the price of the base currency.</li>
+
+                <li> To trade currency pairs you choose two currencies to buy and sell with. Each currency will experience different market fluctuations based on the global economy. To understand which ones to use, you’ll need to learn about the various currencies and how they are affected by social and political events. There will be patterns and features you can use to predict future forex prices.</li>
+                </ul>
+
+                
+            </div>
+        </section> -->
+<%- include('partials/footer.ejs')%>

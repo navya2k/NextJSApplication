@@ -1,0 +1,36 @@
+<%- include('partials/header.ejs')%>
+
+<form action="/users/trade/offer/<%=id%>" method="POST">
+  <div class="content">
+      <h2>Welcome</h2>
+      <% if(items.length) { %>
+          <p>Your trades</p>
+          <table>
+              <tr>
+                  <th>  </th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Status</th>
+              </tr>
+          <% items.forEach (item => { %>
+              <% if(item.status == 'Available') { %>
+              <tr>
+                  <td>
+                      <div class="radio">
+                          <input type="radio" id='regular' name='item' value=<%=item.id%> required>
+                      </div>
+                  </td>
+                  <td><a href="/trades/<%=item.id%>"><%= item.name %></a></td>
+                  <td><%= item.category %></td>
+                  <td><%= item.status %></td>
+              </tr>
+          <% } }); %>
+          </table><br>
+          <button  type="submit">Trade</button>
+      <% } %>
+  </div>
+  </form>
+
+   
+
+<%- include('partials/footer.ejs')%>

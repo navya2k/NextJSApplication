@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Currency Trading</title>
+        <link rel="stylesheet" type="text/css" href="/css/index1.css">
+    </head>
+    <body>
+        <header>
+            <div id="header">
+                <div id="heading-text">
+                   <a href="/"> <img src="https://th.bing.com/th/id/OIP.7CbNEZKUzMNrLQYvKsqdlgHaKj?pid=ImgDet&rs=1" alt="Company logo" ></a> 
+                    <p>CURRENCY TRADING</p>
+                </div>
+                
+            </div>
+            <div id="login-info">
+                <form  action="../newTrade" method="get">
+                    <button class="button1">START TRADING</button>
+                </form>
+                <!-- <a href="newTrade.html"><button class="button1" >Start Trading</button ></a>  -->
+                <!-- <a href='/users/login'>Sign IN</a>
+                &nbsp;&nbsp;<a>Sign Up</a> -->
+            </div>
+            <div id="top-bar">
+                <ul>
+                    <li><a href="/">HOME</a></li> 
+                    <li><a href="../trades">MY TRADES</a></li>
+                    <% if(!user){%>
+                    <li><a href='/users/new'>SIGN Up</a></li>
+                    
+                    <li><a href='/users/login'>SIGN IN</a></li>
+                    <%}else{%>
+                    <li><a href='/users/profile'>PROFILE</a></li>
+                    <li><a href='/users/logout'>LOGOUT</a></li>
+                    <%}%>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </header>
+        <% if(errorMessages.length > 0){
+            errorMessages.forEach(message => {%>
+                <div class="error"><%=message%></div>
+            <% });
+        } %>
+    
+        <% if(successMessages.length > 0){
+            successMessages.forEach(message => {%>
+                <div class="success"><%=message%></div>
+            <% });
+        } %>

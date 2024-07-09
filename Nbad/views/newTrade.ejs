@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs')%>
+
+        <section class="article">
+            <h2>Create a New Trade</h2>
+            <form action = '/trades' method = 'POST'>
+                <table>
+                    <tr>
+                        <td><label for="name" >Name</label></td>
+                        <td><input type="text" id="name" name="name" class = "fixed-width" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="category" >Category</label></td>
+                        <td><input type="text" id="category" name="category"  class = "fixed-width" required></td>
+                    </tr>
+                    <tr><td class = "align-top"><label for="details">Details</label></td>
+                        <td><textarea rows="5" cols="90" id="details" name="details" class = "fixed-width" required minlength="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="status" >Status</label></td>
+                        <td><input type="text" id="status" name="status"  class = "fixed-width" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Image" >Image-url</label></td>
+                        <td><input type="url" id="Image" name="Image"  class = "fixed-width" required></td>
+                    </tr>
+                    <!-- <tr>
+                        <td><label for="author" >Author</label></td>
+                        <td><input type="text" id="type" name="Author"  class = "fixed-width" required></td>
+                    </tr> -->
+        
+        
+                    <tr>
+                        <td colspan="10" class = "align-right"><button>Submit</button></td>
+                    </tr>
+                    </table>        
+            </form>
+            <!-- <div id="main-content-area">
+                <form id="lab1" action="trades.html">
+                    <label>
+                        Category:<input name="Category" type="text" id="Category"><br><br></label>
+                    <!-- &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Category" ><br><br> -->
+                    <!-- <label>From Currency:<input name="From_Currency" type="text" id="fc" ><br><br></label>
+                    
+                    <label>To Currency:<input name="To_Currency" type="text" id="tc"><br><br><br></label>
+                    &nbsp;&nbsp;&nbsp; &nbsp;
+                    &nbsp;<label>Details:<textarea name="Details" id="details"></textarea><br><br></label>
+                 
+                    
+                    &nbsp; &nbsp; &nbsp; &nbsp;<input  id="lab2" type="submit" value="Create Trade">
+                </form>
+                
+            </div> --> 
+        </section>
+<%- include('partials/footer.ejs')%>

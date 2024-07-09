@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs')%>
+
+<div class = "content">
+ 
+    <%if(categories.length){%>
+    <%categories.forEach(category=>{%>
+    <h3><%=category%></h3>
+<%if(items.length){%>
+<%items.forEach(item=>{%>
+        <%if(item.category===category){%>
+           
+            <a href="/trades/<%=item.id%>"><p><%=item.name%><br><img src="<%=item.Image%>" alt="Image"width=250 height=150/></p></a><br>
+        
+       <% }%>
+   <% });%>
+<%} else{%>
+    <p>There are no trades to display</p>
+
+<%}%>
+<%});%>
+<%} else{%>
+    <p>There are no trades to display</p>
+
+<%}%>
+  
+
+    
+    
+</div>
+
+
+        <!-- <div id="main-content-area">
+            <h1>Trades:</h1><br>
+            <section class="article-main-content">
+                
+                <h2>Position Trading</h2>
+                <ul>
+                    <li><a href=trade.html><img src="https://th.bing.com/th/id/R.49fd5866777015b87c0273195efb75a9?rik=cis8e3Fk1A%2f49A&riu=http%3a%2f%2fswing-trading-strategies.com%2fwp-content%2fuploads%2f2014%2f10%2fBest-Trend-Trading-Strategy.png&ehk=ix8F8b6aTfe%2bflT1xey%2bf46zoE6uWAptxDvp%2fgWKh2k%3d&risl=&pid=ImgRaw&r=0" alt="graph" style="width:90px"><br>Trend Trading</a></li>
+                    <li><a href=trade.html><img src="https://www.forex.academy/wp-content/uploads/2020/10/Support-and-Resistance-Strategy-4.png" alt="graph" style="width:90px"><br>Support and Resistance (S&R) Trading</a></li>
+                    <li><a href=trade.html><img src="https://th.bing.com/th/id/R.60e2fc3df1b6445c0074e30aa1c8708e?rik=C44k8qgeW7lefQ&riu=http%3a%2f%2fdailypriceaction.com%2fwp-content%2fuploads%2f2014%2f10%2fusdjpy-forex-breakout-strategy.png&ehk=6wDJZou65eipHVfff8g1lEDljO1iWb2r1PeI3fCaY5o%3d&risl=&pid=ImgRaw&r=0" alt="graph" style="width:90px"><br>Breakout Trading</a></li>
+
+                </ul>
+                </section>
+                <section class="article-main-content">
+                    <h2>Swing trading</h2>
+                    <ul>
+                        <li><a href=trade.html><img src="https://forextraininggroup.com/wp-content/uploads/2017/02/Forex-Reversal-Strategy-Example-1024x528.png" alt="graph" style="width:90px"><br>Reversal Trading</a></li>
+                        <li><a href=trade.html><img src="https://bpcdn.co/images/2016/05/grade3-fibonacci-retracement-uptrend-end2.png" alt="graph" style="width:90px"><br>Retracement Trading</a></li>
+                        <li><a href=trade.html><img src="https://th.bing.com/th/id/R.60e2fc3df1b6445c0074e30aa1c8708e?rik=C44k8qgeW7lefQ&riu=http%3a%2f%2fdailypriceaction.com%2fwp-content%2fuploads%2f2014%2f10%2fusdjpy-forex-breakout-strategy.png&ehk=6wDJZou65eipHVfff8g1lEDljO1iWb2r1PeI3fCaY5o%3d&risl=&pid=ImgRaw&r=0" alt="graph" style="width:90px"><br>Breakout Trading</a></li>
+                        <li><a href=trade.html><img src="https://th.bing.com/th/id/OIP.DD8RILxW0tTbkD7oagkYEwHaEK?w=291&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="graph" style="width:90px"><br>Breakdown</a></li>
+                    </ul>
+                </section>
+        </div> -->
+<%- include('partials/footer.ejs')%>

@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs')%>
+<div class = "profile-info">
+        <p>Manage Trade request: </p>
+        <table>
+            <tr>
+                <td>
+                    <p><%=trade.name %></p><br>
+                    <img src='<%=trade.Image %>' width=250 height=150/>
+                </td>
+                <td>
+                    <p><%= items.name %></p><br>
+                    <img src='<%=items.Image %>' width=250 height=150/>
+                </td>
+                <td>
+                    <form>
+                        <% if(initiated){ %>
+                            <button type="submit" formmethod="POST" formaction="/users/canceltrade/<%=trade._id%>">Cancel Offer</button>
+                        <% } else { %>
+                            <button type="submit" formmethod="POST" formaction="/users/accepttrade/<%=trade._id%>">Accept</button>
+                            <button type="submit" formmethod="POST" formaction="/users/canceltrade/<%=trade._id%>">Reject</button>
+                        <% } %>
+                    </form>
+                </td>
+            </tr>
+        </table>
+</div>
+<%- include('partials/footer.ejs')%>
